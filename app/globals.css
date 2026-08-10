@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-line;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-ink text-bone font-body antialiased;
+  }
+  ::selection {
+    @apply bg-ember text-ink;
+  }
+  :focus-visible {
+    outline: 2px solid #ff5a1f;
+    outline-offset: 3px;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display font-normal tracking-tight;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  .shell {
+    @apply mx-auto w-full max-w-[1400px] px-6 md:px-10 xl:px-16;
+  }
+
+  .eyebrow {
+    @apply font-mono text-[11px] tracking-widest2 uppercase text-ember;
+  }
+
+  .eyebrow-muted {
+    @apply font-mono text-[11px] tracking-widest2 uppercase text-stone;
+  }
+
+  .btn-solid {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-ember px-7 py-3.5
+      font-mono text-[12px] font-medium uppercase tracking-widest2 text-ink
+      transition-all duration-300 hover:bg-amber hover:-translate-y-0.5
+      active:translate-y-0 whitespace-nowrap;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-bone/25 px-7 py-3.5
+      font-mono text-[12px] font-medium uppercase tracking-widest2 text-bone
+      transition-all duration-300 hover:border-ember hover:text-ember hover:-translate-y-0.5
+      active:translate-y-0 whitespace-nowrap;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center gap-1.5 font-mono text-[12px] uppercase tracking-widest2
+      text-bone/70 transition-colors duration-300 hover:text-ember;
+  }
+
+  .card {
+    @apply rounded-2xl border border-line bg-surface;
+  }
+
+  .divider {
+    @apply border-t border-line;
+  }
+
+  .section-pad {
+    @apply py-20 md:py-28;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .bg-noise {
+    background-image: url("/noise.svg");
+    background-size: 220px;
+  }
+}
