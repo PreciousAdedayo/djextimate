@@ -10,11 +10,18 @@ export default function AdminShell({
   title: string;
 }) {
   return (
-    <div className="flex min-h-screen flex-col bg-ink lg:flex-row">
+    <div className="min-h-screen bg-ink lg:flex">
       <AdminSidebar />
-      <section className="flex-1 px-6 py-10 md:px-12 md:py-14">
-        <p className="eyebrow mb-3">{eyebrow}</p>
-        <h1 className="mb-10 font-display text-4xl leading-[0.95] text-bone md:text-5xl">{title}</h1>
+
+      <section className="min-w-0 flex-1 px-4 pb-10 pt-24 sm:px-6 md:px-12 md:pb-14 md:pt-28 lg:px-12 lg:py-14">
+        <p className="eyebrow mb-3">
+          {eyebrow}
+        </p>
+
+        <h1 className="mb-8 font-display text-3xl leading-[0.95] text-bone sm:text-4xl md:mb-10 md:text-5xl">
+          {title}
+        </h1>
+
         {children}
       </section>
     </div>
